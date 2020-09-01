@@ -11,12 +11,6 @@
 </head>
 <body>
   <div  class = " bg-blanco contenedor sombra contactos ">
-      <div  class = " contenedor-contactos ">
-          <h2> Articulos</h2 >
-
-          <input  type = "text " id = "buscar " class = "buscador sombra " placeholder = " Buscar Artículo ... " >
-
-          <p  class = "total-articulos "></p >
       <div class="contenedor-tabla">   
         <table>
             <thead>
@@ -26,6 +20,7 @@
                 <td>fecha_publicacion</td>
                 <td>autor</td>
                 <td>acciones</td>
+                <td>Comentarios</td>
               </tr>
               </thead>
             <tbody>
@@ -33,7 +28,7 @@
           <?php
             require('../config/bd_conexion.php');
             #$stmt = $conn->prepare("SELECT * FROM `articulos`");
-            $sql = "SELECT * FROM articulos";
+            $sql = "SELECT * FROM articulos ORDER BY id DESC";
             $result = mysqli_query($conn,$sql);
           ?> 
           <?php while($mostrar=mysqli_fetch_array($result)){ ?>
@@ -48,6 +43,9 @@
                   <a class="btn-borrar btn" href="../funciones/eliminar.php?id=<?php echo $mostrar['id']; ?>">BORRAR</a>        
                 </td> 
               <?php } ?>
+
+              
+              
               
             </tr>
           <?php } ?>
