@@ -16,19 +16,57 @@
     <title>Artículos de mi Blog</title>
   </head>
 <body class="contenedor">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="margin-bottom:50px">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<a href="cerrar_sesion.php"><button type="button" id="cerrar_sesion" name="cerrar_sesion" class="btn btn-secondary">Cerrar Sesion</button></a>
-  <a href="crear_articulo.php">Crear Articulo</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Bienvenido <?php echo $_SESSION['nombre_usuario'] ?>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Mis articulos</a>
+              <a class="dropdown-item" href="crear_articulo.php">Crear Articulo</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="cerrar_sesion.php" id="cerrar_sesion" name="cerrar_sesion" > Cerrar Sesion</a>
+            </div>
+          </li>
+      </ul>
+
+        </form>
+      </div>
+    </nav>
+  
 
   <?php include_once '../funciones/nuevo_articulo.php'; ?>
   
-   <?php if(isset($_SESSION['nombre_usuario'])){ ?>
-        <input type="button" value="logeado">
-        <p>Bienvenido <?php echo $_SESSION['nombre_usuario']?></p>
-   <?php }else{ ?>
-    <input type="button" value="no logeado">
-   <?php }; ?>
-      
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="../js/jquery.js"></script>
