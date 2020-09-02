@@ -8,21 +8,22 @@
 </head>
 <body>
 <section class="seccion contenedor">
-  <h2>Crea tu articulo</h2>
+  
   <div class="container">
+  <h2>Crea tu articulo</h2>
     <div class="row justify-content-md-center">
         <div class="col align-self-center">
             <form id="articulo" class="registro" >
                 <div id="datos_usuario" class="registro caja clearfix">
-                <div class="campo">
+                <div class="form-group">
                     <label for="titulo">titulo:</label>
-                    <input type="textarea" id="titulo" name="titulo" placeholder="Ingresa tu titulo">
+                    <input type="textarea" class="form-control" id="titulo" name="titulo" placeholder="Ingresa tu titulo">
                 </div>
-                <div class="campo">
+                <div class="form-group">
                     <label for="descripcion">Descripción:</label>
-                    <input type="textarea" id="descripcion" name="descripcion" placeholder="Descripción">
+                    <input type="textarea" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción">
                 </div>
-                <div class="campo enviar">
+                <div class="form-group enviar" style="padding:10px;">
                     <input type="hidden" id="accion" name ="accion" value="crear">
                     <button id="cargar" type="submit" class="btn btn-primary" value="Añadir">Añadir</button>
                 </div>

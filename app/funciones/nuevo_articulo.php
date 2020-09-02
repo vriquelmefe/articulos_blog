@@ -7,6 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Document</title>
 </head>
 <body>
@@ -19,16 +20,16 @@
           <?php while($mostrar=mysqli_fetch_array($result)){ ?>
 
             <div class="container">
-          
-                <div class="row justify-content-center">
-                  <div class="col-6">
-                    <a href="articulo.php?id=<?php echo $mostrar['id']; ?>"><?php echo $mostrar['titulo'] ?></a>
-                  </div>
-                  <div class="col-4">
-                      <?php echo $mostrar['autor'] ?>
-                  </div>
-                </div>
-                
+              <div class="form-control col-5">
+                  <div class="row justify-content-center">
+                      <div class="col-6">
+                        <a href="articulo.php?id=<?php echo $mostrar['id']; ?>"><?php echo $mostrar['titulo'] ?></a>
+                      </div>
+                      <div class="col-4">
+                          <?php echo $mostrar['autor'] ?>
+                      </div>
+                    </div>
+              </div>    
             </div>
 
            
