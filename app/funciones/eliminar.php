@@ -18,8 +18,8 @@
     while($mostrar=mysqli_fetch_array($result)){ ?>
     <?php if($_SESSION['nombre_usuario']  == $mostrar['autor']) { ?>
            
-        <section class="seccion contenedor"> 
-                    <h2>Crea tu articulo</h2>
+        <section class="container"> 
+                    <h2>Tú articulo</h2>
                     <form id="articulo" name="articulo" class="registro"  method="post">
                         <div id="datos_usuario" class="registro caja clearfix">
                         <div class="campo">

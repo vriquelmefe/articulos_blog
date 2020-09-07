@@ -18,20 +18,27 @@
             $result = mysqli_query($conn,$sql);
           ?> 
           <?php while($mostrar=mysqli_fetch_array($result)){ ?>
-
+             
             <div class="container">
-              <div class="form-control col-5">
-                  <div class="row justify-content-center">
-                      <div class="col-6">
+              <div class="form-control col-7" style="padding:10px">
+                  <div class="row row-cols-4 justify-content-center">
+                      <div class="col-5">
                         <a href="articulo.php?id=<?php echo $mostrar['id']; ?>"><?php echo $mostrar['titulo'] ?></a>
                       </div>
-                      <div class="col-4">
+                      <div class="col">
                           <?php echo $mostrar['autor'] ?>
                       </div>
-                    </div>
+                      
+                      <div class="col">
+                      <?php if($_SESSION['nombre_usuario'] == $mostrar['autor'] ){ ?>
+                      <a class="btn-editar btn" href="../funciones/actualizar.php?id=<?php echo $mostrar['id']; ?>">Editar</a>
+                      <a class="btn-borrar btn" href="../funciones/eliminar.php?id=<?php echo $mostrar['id']; ?>">BORRAR</a>
+                      <?php } ?>
+                      </div>
+                  </div>
               </div>    
             </div>
-
+          
            
           <?php } ?>
           <?php  $conn->close(); ?>

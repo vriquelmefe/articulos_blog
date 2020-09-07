@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
+    <title>Edita tu Artículo</title>
 </head>
 <body>
 <?php
@@ -18,39 +18,40 @@
     while($mostrar=mysqli_fetch_array($result)){ ?>
     <?php if($_SESSION['nombre_usuario']  == $mostrar['autor']) { ?>
            
-            <section class="seccion contenedor">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <div class="row justify-content-md-center">
-                    <div class="col align-self-center"> 
-                        <h2>Edita tu articulo</h2>
-                        <?php echo $mostrar['titulo']; ?>
-                        <form id="articulo" name="articulo" class="registro" method="post">
-                            <div id="datos_usuario" name="datos_usuario" class="registro caja clearfix">
-                            <div class="campo">
-                                <label for="titulo">titulo:</label> 
-                                <textarea type="textarea" id="titulo" name="titulo" placeholder="Ingresa tu titulo"  > <?php echo $mostrar['titulo']; ?> </textarea>
-                            </div>
-                            <div class="campo">
-                                <label for="descripcion">Descripción:</label>
-                                <textarea type="textarea" id="descripcion" name="descripcion" placeholder="Descripción" > <?php echo $mostrar['descripcion']; ?> </textarea>
-                            </div>
-                            <div class="campo enviar">
-                                <input type="hidden" id="id" name ="id" value=<?php echo $mostrar['id']; ?>>
-                                <button id="editar" type="submit" class="btn btn-primary" value="editar">Actualizar</button>
-                            </div>
-                            </div>
-                            <!--#datos_usuario-->
-                        </form>
-                        </div>
+    <section>
+    <h2 class="text-info d-flex justify-content-around" style="padding:20px">Edita tu articulo</h2>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="form-control">
+                    <div class="row justify-content-md-center"> 
+                        <div class="col align-self-center">
+                                <form id="articulo" name="articulo" class="registro" method="post">
+                                    <div id="datos_usuario" name="datos_usuario" class="registro caja clearfix">
+                                    <div class="form-group">
+                                        <label for="titulo">TITULO:</label> 
+                                        <textarea type="textarea" class="form-control" id="titulo" name="titulo" placeholder="Ingresa tu titulo"  > <?php echo $mostrar['titulo']; ?> </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="descripcion">Descripción:</label>
+                                        <textarea type="textarea"class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" > <?php echo $mostrar['descripcion']; ?> </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" id="id" name ="id" value=<?php echo $mostrar['id']; ?>>
+                                        <button id="editar" type="submit" class="btn btn-primary" value="editar">Actualizar</button>
+                                    </div>
+                                    </div>
+                                    <!--#datos_usuario-->
+                                </form>
+                        </div>    
                     </div>
-                 </div>
+                </div>
             </div>
-                    </section>
-                <?php } else { ?>
-                    <h1>No esta autorizado para realizar este cambio</h1>
-                <?php }; ?>
-                <?php
+        </div>
+    </section>
+        <?php } else { ?>
+            <h1>No esta autorizado para realizar este cambio</h1>
+        <?php }; ?>
+        <?php
            
     }
   
