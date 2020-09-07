@@ -18,26 +18,36 @@
     while($mostrar=mysqli_fetch_array($result)){ ?>
     <?php if($_SESSION['nombre_usuario']  == $mostrar['autor']) { ?>
            
-        <section class="container"> 
-                    <h2>Tú articulo</h2>
-                    <form id="articulo" name="articulo" class="registro"  method="post">
-                        <div id="datos_usuario" class="registro caja clearfix">
-                        <div class="campo">
-                            <label for="titulo">titulo:</label>
-                            <input type="text" id="titulo" name="titulo" placeholder="Ingresa tu titulo" value= <?php echo $mostrar['titulo']; ?> >
+    <section> 
+        <h2 class="text-info d-flex justify-content-around" style="padding:20px">Estas seguro de eliminar este articulo</h2>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="form-control">
+                    <div class="row justify-content-md-center"> 
+                        <div class="col align-self-center">
+                            <form id="articulo" name="articulo" class="registro"  method="post">
+                                <div id="datos_usuario" class="registro caja clearfix">
+                                <div class="campo">
+                                    <label for="titulo">titulo:</label>
+                                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingresa tu titulo" value= <?php echo $mostrar['titulo']; ?> >
+                                </div>
+                                <div class="campo">
+                                    <label for="descripcion">Descripción:</label>
+                                    <input type="textarea" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" value = <?php echo $mostrar['descripcion']; ?> >
+                                </div>
+                                <div class="campo enviar">
+                                    <input type="hidden" id="id" name ="id" value=<?php echo $mostrar['id']; ?>>
+                                    <button id="cargar" type="submit" class="btn btn-primary" value="Borrar">Borrar</button>
+                                </div>
+                                </div>
+                                <!--#datos_usuario-->
+                            </form>
+                                
+                            </div>
                         </div>
-                        <div class="campo">
-                            <label for="descripcion">Descripción:</label>
-                            <input type="textarea" id="descripcion" name="descripcion" placeholder="Descripción" value = <?php echo $mostrar['descripcion']; ?> >
-                        </div>
-                        <div class="campo enviar">
-                            <input type="hidden" id="id" name ="id" value=<?php echo $mostrar['id']; ?>>
-                            <button id="cargar" type="submit" class="btn btn-primary" value="Borrar">Borrar</button>
-                        </div>
-                        </div>
-                        <!--#datos_usuario-->
-                    </form>
-                    </section>
+                    </div>
+            </div>
+    </section>
                 <?php } else { ?>
                     <h1>No esta autorizado para eliminar este cambio</h1>
                 <?php }; ?>

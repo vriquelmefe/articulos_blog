@@ -31,8 +31,8 @@
                       
                       <div class="col">
                       <?php if($_SESSION['nombre_usuario'] == $mostrar['autor'] ){ ?>
-                      <a class="btn-editar btn" href="../funciones/actualizar.php?id=<?php echo $mostrar['id']; ?>">Editar</a>
-                      <a class="btn-borrar btn" href="../funciones/eliminar.php?id=<?php echo $mostrar['id']; ?>">BORRAR</a>
+                      <a class="badge badge-info" href="../funciones/actualizar.php?id=<?php echo $mostrar['id']; ?>">Editar</a>
+                      <a class="badge badge-danger" href="../funciones/eliminar.php?id=<?php echo $mostrar['id']; ?>">BORRAR</a>
                       <?php } ?>
                       </div>
                   </div>
