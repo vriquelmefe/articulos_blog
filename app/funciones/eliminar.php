@@ -27,15 +27,15 @@
                         <div class="col align-self-center">
                             <form id="articulo" name="articulo" class="registro"  method="post">
                                 <div id="datos_usuario" class="registro caja clearfix">
-                                <div class="campo">
+                                <div class="form-group">
                                     <label for="titulo">titulo:</label>
                                     <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingresa tu titulo" value= <?php echo $mostrar['titulo']; ?> >
                                 </div>
-                                <div class="campo">
+                                <div class="form-group">
                                     <label for="descripcion">Descripción:</label>
                                     <input type="textarea" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" value = <?php echo $mostrar['descripcion']; ?> >
                                 </div>
-                                <div class="campo enviar">
+                                <div class="form-group">
                                     <input type="hidden" id="id" name ="id" value=<?php echo $mostrar['id']; ?>>
                                     <button id="cargar" type="submit" class="btn btn-primary" value="Borrar">Borrar</button>
                                 </div>
